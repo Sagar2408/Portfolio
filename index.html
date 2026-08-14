@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar | Full Stack Developer | MERN Stack</title>
+    <meta name="description" content="Portfolio of Sagar, a Full Stack Developer specializing in MERN Stack, enterprise applications, secure APIs, real-time systems, and production deployments.">
+    <meta name="keywords" content="Sagar, Full Stack Developer, MERN Stack, React, Node.js, MongoDB, Express, JavaScript">
+    <meta name="author" content="Sagar">
+    <meta property="og:title" content="Sagar | Full Stack Developer | MERN Stack">
+    <meta property="og:description" content="Portfolio of Sagar, a Full Stack Developer specializing in MERN Stack, enterprise applications, secure APIs, real-time systems, and production deployments.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sagar-portfolio-cv.netlify.app/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sagar | Full Stack Developer | MERN Stack">
+    <meta name="twitter:description" content="Portfolio of Sagar, a Full Stack Developer specializing in MERN Stack, enterprise applications, secure APIs, real-time systems, and production deployments.">
+    <link rel="canonical" href="https://sagar-portfolio-cv.netlify.app/">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter','system-ui','sans-serif'],
+                        mono: ['JetBrains Mono','monospace'],
+                    },
+                    colors: {
+                        primary: {50:'#f0f9ff',100:'#e0f2fe',200:'#bae6fd',300:'#7dd3fc',400:'#38bdf8',500:'#0ea5e9',600:'#0284c7',700:'#0369a1',800:'#075985',900:'#0c4a6e'},
+                        dark: {50:'#f8fafc',100:'#f1f5f9',200:'#e2e8f0',300:'#cbd5e1',400:'#94a3b8',500:'#64748b',600:'#475569',700:'#334155',800:'#1e293b',900:'#0f172a',950:'#020617'},
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root { --primary:#0ea5e9; --primary-glow:rgba(14,165,233,0.25); --bg-dark:#ffffff; --bg-card:rgba(248,250,252,0.75); --border:rgba(15,23,42,0.08); }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        html { scroll-behavior:smooth; }
+        body { font-family:'Inter',system-ui,sans-serif; background:var(--bg-dark); color:#1e293b; overflow-x:hidden; line-height:1.6; }
+        ::-webkit-scrollbar { width:8px; }
+        ::-webkit-scrollbar-track { background:#f1f5f9; }
+        ::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:4px; }
+        ::-webkit-scrollbar-thumb:hover { background:#94a3b8; }
+        ::selection { background:rgba(14,165,233,0.25); color:#0f172a; }
+        .grid-bg { background-image:linear-gradient(rgba(15,23,42,0.035) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,0.035) 1px,transparent 1px); background-size:60px 60px; }
+        .glow { box-shadow:0 0 20px var(--primary-glow),0 0 40px rgba(14,165,233,0.08); }
+        .glow-text { text-shadow:0 0 20px var(--primary-glow); }
+        .glass { background:rgba(248,250,252,0.7); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border:1px solid var(--border); }
+        .glass-strong { background:rgba(248,250,252,0.9); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); border:1px solid var(--border); }
+        @keyframes fadeInUp { from { opacity:0; transform:translateY(30px);} to { opacity:1; transform:translateY(0);} }
+        @keyframes fadeIn { from { opacity:0;} to { opacity:1;} }
+        @keyframes pulse { 0%,100% { opacity:1;} 50% { opacity:0.5;} }
+        @keyframes float { 0%,100% { transform:translateY(0);} 50% { transform:translateY(-10px);} }
+        .animate-fade-in-up { animation:fadeInUp 0.8s ease-out forwards; }
+        .animate-fade-in { animation:fadeIn 0.6s ease-out forwards; }
+        .animate-pulse-slow { animation:pulse 3s ease-in-out infinite; }
+        .animate-float { animation:float 6s ease-in-out infinite; }
+        .reveal { opacity:0; transform:translateY(30px); transition:all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal.active { opacity:1; transform:translateY(0); }
+        .reveal-left { opacity:0; transform:translateX(-30px); transition:all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal-left.active { opacity:1; transform:translateX(0); }
+        .reveal-right { opacity:0; transform:translateX(30px); transition:all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal-right.active { opacity:1; transform:translateX(0); }
+        .reveal-scale { opacity:0; transform:scale(0.95); transition:all 0.8s cubic-bezier(0.16,1,0.3,1); }
+        .reveal-scale.active { opacity:1; transform:scale(1); }
+        .delay-100 { transition-delay:0.1s; } .delay-200 { transition-delay:0.2s; } .delay-300 { transition-delay:0.3s; }
+        .delay-400 { transition-delay:0.4s; } .delay-500 { transition-delay:0.5s; } .delay-600 { transition-delay:0.6s; }
+        #hero-canvas { position:absolute; top:0; left:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+        .nav-blur { background:rgba(255,255,255,0.85); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); }
+        .btn-primary { background:linear-gradient(135deg,#0ea5e9,#0284c7); color:white; padding:12px 28px; border-radius:8px; font-weight:600; transition:all 0.3s ease; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
+        .btn-primary:hover { transform:translateY(-2px); box-shadow:0 10px 30px rgba(14,165,233,0.3); }
+        .btn-secondary { background:transparent; color:#1e293b; padding:12px 28px; border-radius:8px; font-weight:600; transition:all 0.3s ease; border:1px solid rgba(15,23,42,0.15); cursor:pointer; display:inline-flex; align-items:center; gap:8px; }
+        .btn-secondary:hover { border-color:#0ea5e9; color:#0284c7; transform:translateY(-2px); }
+        .card { background:rgba(248,250,252,0.7); border:1px solid rgba(15,23,42,0.08); border-radius:12px; padding:24px; transition:all 0.3s ease; }
+        .card:hover { border-color:rgba(14,165,233,0.35); transform:translateY(-4px); box-shadow:0 20px 40px rgba(15,23,42,0.1); }
+        .timeline-line { position:absolute; left:24px; top:0; bottom:0; width:2px; background:linear-gradient(to bottom,#0ea5e9,transparent); }
+        .timeline-dot { width:16px; height:16px; border-radius:50%; background:#0ea5e9; border:3px solid #ffffff; position:relative; z-index:1; box-shadow:0 0 10px rgba(14,165,233,0.4); }
+        .timeline-dot.current { background:#16a34a; box-shadow:0 0 10px rgba(22,163,74,0.4); animation:pulse 2s ease-in-out infinite; }
+        .tech-item { background:rgba(248,250,252,0.9); border:1px solid rgba(15,23,42,0.08); border-radius:8px; padding:12px 20px; transition:all 0.3s ease; cursor:default; position:relative; }
+        .tech-item:hover { border-color:rgba(14,165,233,0.4); transform:translateY(-2px); box-shadow:0 8px 20px rgba(14,165,233,0.12); }
+        .tech-tooltip { position:absolute; bottom:100%; left:50%; transform:translateX(-50%) translateY(-8px); background:#1e293b; color:#f1f5f9; padding:8px 12px; border-radius:6px; font-size:12px; white-space:nowrap; opacity:0; visibility:hidden; transition:all 0.3s ease; border:1px solid rgba(148,163,184,0.2); z-index:10; }
+        .tech-item:hover .tech-tooltip { opacity:1; visibility:visible; transform:translateX(-50%) translateY(0); }
+        .arch-box { background:rgba(248,250,252,0.9); border:1px solid rgba(15,23,42,0.1); border-radius:8px; padding:16px 24px; text-align:center; transition:all 0.3s ease; position:relative; }
+        .arch-box:hover { border-color:rgba(14,165,233,0.4); box-shadow:0 0 20px rgba(14,165,233,0.1); }
+        .arch-arrow { display:flex; justify-content:center; padding:8px 0; color:#94a3b8; }
+        .form-input { background:#ffffff; border:1px solid rgba(15,23,42,0.15); border-radius:8px; padding:14px 18px; color:#1e293b; width:100%; transition:all 0.3s ease; font-family:'Inter',sans-serif; }
+        .form-input:focus { outline:none; border-color:#0ea5e9; box-shadow:0 0 0 3px rgba(14,165,233,0.12); }
+        .form-input::placeholder { color:#94a3b8; }
+        .mobile-menu { transform:translateX(100%); transition:transform 0.3s ease; }
+        .mobile-menu.open { transform:translateX(0); }
+        .section-label { font-family:'JetBrains Mono',monospace; font-size:13px; color:#0284c7; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+        .section-label::before { content:''; display:inline-block; width:24px; height:1px; background:#0284c7; }
+        .status-badge { display:inline-flex; align-items:center; gap:8px; padding:8px 16px; background:rgba(22,163,74,0.08); border:1px solid rgba(22,163,74,0.25); border-radius:100px; font-size:14px; color:#16a34a; }
+        .status-dot { width:8px; height:8px; background:#16a34a; border-radius:50%; animation:pulse 2s ease-in-out infinite; }
+        .exp-card { background:rgba(248,250,252,0.7); border:1px solid rgba(15,23,42,0.08); border-radius:12px; overflow:hidden; transition:all 0.3s ease; }
+        .exp-card:hover { border-color:rgba(14,165,233,0.3); }
+        .exp-header { padding:24px; cursor:pointer; display:flex; justify-content:space-between; align-items:flex-start; gap:16px; }
+        .exp-content { max-height:0; overflow:hidden; transition:max-height 0.5s cubic-bezier(0.16,1,0.3,1); }
+        .exp-content.open { max-height:1000px; }
+        .exp-inner { padding:0 24px 24px; }
+        .exp-toggle { width:32px; height:32px; border-radius:8px; background:rgba(15,23,42,0.06); display:flex; align-items:center; justify-content:center; transition:all 0.3s ease; flex-shrink:0; }
+        .exp-toggle:hover { background:rgba(14,165,233,0.15); }
+        .exp-toggle i { transition:transform 0.3s ease; }
+        .exp-toggle.open i { transform:rotate(180deg); }
+        .project-card { background:rgba(248,250,252,0.7); border:1px solid rgba(15,23,42,0.08); border-radius:12px; overflow:hidden; transition:all 0.4s cubic-bezier(0.16,1,0.3,1); }
+        .project-card:hover { border-color:rgba(14,165,233,0.35); transform:translateY(-6px); box-shadow:0 25px 50px rgba(15,23,42,0.12); }
+        .project-image { height:200px; background:linear-gradient(135deg,#f1f5f9,#e2e8f0); display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+        .project-image::before { content:''; position:absolute; inset:0; background:linear-gradient(135deg,rgba(14,165,233,0.08),transparent); }
+        .cap-card { background:rgba(248,250,252,0.7); border:1px solid rgba(15,23,42,0.08); border-radius:12px; padding:32px; transition:all 0.3s ease; position:relative; overflow:hidden; }
+        .cap-card::before { content:''; position:absolute; top:0; left:0; width:100%; height:2px; background:linear-gradient(90deg,transparent,#0ea5e9,transparent); opacity:0; transition:opacity 0.3s ease; }
+        .cap-card:hover::before { opacity:1; }
+        .cap-card:hover { border-color:rgba(14,165,233,0.25); transform:translateY(-4px); }
+        .cap-number { font-family:'JetBrains Mono',monospace; font-size:48px; font-weight:700; color:rgba(14,165,233,0.18); line-height:1; margin-bottom:16px; }
+        .sec-item { display:flex; align-items:center; gap:12px; padding:16px; background:rgba(248,250,252,0.7); border:1px solid rgba(15,23,42,0.08); border-radius:8px; transition:all 0.3s ease; }
+        .sec-item:hover { border-color:rgba(14,165,233,0.3); background:rgba(14,165,233,0.05); }
+        .sec-icon { width:40px; height:40px; border-radius:8px; background:rgba(14,165,233,0.1); display:flex; align-items:center; justify-content:center; color:#0284c7; flex-shrink:0; }
+        .link-underline { position:relative; text-decoration:none; }
+        .link-underline::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:#0ea5e9; transition:width 0.3s ease; }
+        .link-underline:hover::after { width:100%; }
+        @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; } html { scroll-behavior:auto; } .reveal,.reveal-left,.reveal-right,.reveal-scale { opacity:1; transform:none; } }
+        a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible { outline:2px solid #0ea5e9; outline-offset:2px; }
+        @media print { .no-print { display:none !important; } body { background:white; color:black; } }
+    </style>
+<base target="_blank">
+</head>
+<body class="grid-bg">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <a href="#home" class="flex items-center gap-2 group" aria-label="Home">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-lg font-mono group-hover:shadow-lg group-hover:shadow-primary-500/30 transition-all">SK</div>
+                </a>
+                <div class="hidden md:flex items-center gap-1">
+                    <a href="#home" class="px-4 py-2 text-sm text-dark-600 hover:text-dark-900 transition-colors rounded-lg hover:bg-dark-900/5">Home</a>
+                    <a href="#about" class="px-4 py-2 text-sm text-dark-600 hover:text-dark-900 transition-colors rounded-lg hover:bg-dark-900/5">About</a>
+                    <a href="#experience" class="px-4 py-2 text-sm text-dark-600 hover:text-dark-900 transition-colors rounded-lg hover:bg-dark-900/5">Experience</a>
+                    <a href="#projects" class="px-4 py-2 text-sm text-dark-600 hover:text-dark-900 transition-colors rounded-lg hover:bg-dark-900/5">Projects</a>
+                    <a href="#skills" class="px-4 py-2 text-sm text-dark-600 hover:text-dark-900 transition-colors rounded-lg hover:bg-dark-900/5">Skills</a>
+                    <a href="#contact" class="px-4 py-2 text-sm text-dark-600 hover:text-dark-900 transition-colors rounded-lg hover:bg-dark-900/5">Contact</a>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#resume" class="btn-primary text-sm py-2 px-5"><i class="fas fa-file-alt text-xs"></i>Resume</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-dark-600 hover:text-dark-900 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed inset-0 z-50 md:hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="mobile-menu-overlay"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-72 bg-white border-l border-dark-200 p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-mono text-primary-600 font-bold">Menu</span>
+                <button id="mobile-menu-close" class="p-2 text-dark-600 hover:text-dark-900" aria-label="Close menu"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="flex flex-col gap-2">
+                <a href="#home" class="mobile-link px-4 py-3 text-dark-600 hover:text-dark-900 hover:bg-dark-900/5 rounded-lg transition-colors">Home</a>
+                <a href="#about" class="mobile-link px-4 py-3 text-dark-600 hover:text-dark-900 hover:bg-dark-900/5 rounded-lg transition-colors">About</a>
+                <a href="#experience" class="mobile-link px-4 py-3 text-dark-600 hover:text-dark-900 hover:bg-dark-900/5 rounded-lg transition-colors">Experience</a>
+                <a href="#projects" class="mobile-link px-4 py-3 text-dark-600 hover:text-dark-900 hover:bg-dark-900/5 rounded-lg transition-colors">Projects</a>
+                <a href="#skills" class="mobile-link px-4 py-3 text-dark-600 hover:text-dark-900 hover:bg-dark-900/5 rounded-lg transition-colors">Skills</a>
+                <a href="#contact" class="mobile-link px-4 py-3 text-dark-600 hover:text-dark-900 hover:bg-dark-900/5 rounded-lg transition-colors">Contact</a>
+                <div class="mt-4 pt-4 border-t border-dark-200">
+                    <a href="#resume" class="btn-primary w-full justify-center"><i class="fas fa-file-alt"></i>Resume</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <canvas id="hero-canvas"></canvas>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-white/60 to-white z-[1]"></div>
+        <div class="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
+            <div class="absolute top-[20%] left-[10%] text-dark-300/70 font-mono text-sm animate-float" style="animation-delay:0s;">React.js</div>
+            <div class="absolute top-[30%] right-[15%] text-dark-300/70 font-mono text-sm animate-float" style="animation-delay:1s;">Node.js</div>
+            <div class="absolute top-[60%] left-[8%] text-dark-300/70 font-mono text-sm animate-float" style="animation-delay:2s;">MongoDB</div>
+            <div class="absolute top-[70%] right-[10%] text-dark-300/70 font-mono text-sm animate-float" style="animation-delay:3s;">Express</div>
+            <div class="absolute top-[40%] left-[85%] text-dark-300/70 font-mono text-sm animate-float" style="animation-delay:1.5s;">TypeScript</div>
+            <div class="absolute top-[15%] right-[30%] text-dark-300/70 font-mono text-sm animate-float" style="animation-delay:2.5s;">REST API</div>
+        </div>
+        <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-24 md:pt-16">
+            <h1 class="animate-fade-in-up text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-dark-900 mb-6 leading-tight" style="animation-delay:0.1s;">
+                I Don't Just Write Code
+                <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600 glow-text">I Build Systems</span>
+            </h1>
+            <p class="animate-fade-in-up text-lg sm:text-xl text-dark-600 max-w-3xl mx-auto mb-10 leading-relaxed" style="animation-delay:0.2s;">
+                I'm <strong class="text-dark-900">Sagar</strong>, a Full Stack Developer specializing in the MERN Stack, secure backend systems, enterprise applications, and production-ready web platforms.
+            </p>
+            <div class="animate-fade-in-up flex flex-col sm:flex-row items-center justify-center gap-4 mb-12" style="animation-delay:0.3s;">
+                <a href="#projects" class="btn-primary text-base">View My Work<i class="fas fa-arrow-right text-sm"></i></a>
+                <a href="#resume" class="btn-secondary text-base"><i class="fas fa-download text-sm"></i>Download Resume</a>
+                <a href="#contact" class="btn-secondary text-base"><i class="fas fa-envelope text-sm"></i>Contact Me</a>
+            </div>
+            <div class="animate-fade-in-up flex items-center justify-center gap-6" style="animation-delay:0.4s;">
+                <a href="https://www.linkedin.com/in/sagar1359/" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-lg bg-dark-900/5 border border-dark-900/15 flex items-center justify-center text-dark-600 hover:text-primary-600 hover:border-primary-400/30 hover:bg-primary-400/10 transition-all" aria-label="LinkedIn"><i class="fab fa-linkedin-in text-lg"></i></a>
+                <a href="https://github.com/Sagar2408" target="_blank" rel="noopener noreferrer" class="w-11 h-11 rounded-lg bg-dark-900/5 border border-dark-900/15 flex items-center justify-center text-dark-600 hover:text-primary-600 hover:border-primary-400/30 hover:bg-primary-400/10 transition-all" aria-label="GitHub"><i class="fab fa-github text-lg"></i></a>
+                <a href="mailto:sagar90160@gmail.com" class="w-11 h-11 rounded-lg bg-dark-900/5 border border-dark-900/15 flex items-center justify-center text-dark-600 hover:text-primary-600 hover:border-primary-400/30 hover:bg-primary-400/10 transition-all" aria-label="Email"><i class="fas fa-envelope text-lg"></i></a>
+            </div>
+            <div class="animate-fade-in-up mt-16 pt-8 border-t border-dark-900/8" style="animation-delay:0.5s;">
+                <p class="text-dark-500 font-mono text-sm mb-3">Frontend &bull; Backend &bull; APIs &bull; Databases &bull; Security &bull; Deployment</p>
+                <p class="text-dark-500 text-sm max-w-xl mx-auto">From idea to production &mdash; I build, secure, deploy, and maintain full-stack applications.</p>
+            </div>
+        </div>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+            <a href="#about" class="text-dark-500 hover:text-primary-600 transition-colors" aria-label="Scroll to About"><i class="fas fa-chevron-down text-xl"></i></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-start">
+                <div class="reveal">
+                    <div class="section-label">01 &mdash; About</div>
+                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 mb-8">About Me</h2>
+                    <div class="space-y-6 text-dark-600 leading-relaxed">
+                        <p>Sagar is a results-driven <strong class="text-dark-900">Full Stack Developer</strong> with hands-on experience designing and delivering scalable web applications across enterprise, semi-government, government-facing, and startup environments.</p>
+                        <p>He specializes in the <strong class="text-dark-900">MERN Stack</strong> and has experience with React.js, Node.js, Express.js, MongoDB, MySQL, PostgreSQL, REST APIs, JWT authentication, WebSocket integrations, WebRTC, cloud deployments, Linux server deployment, Nginx, security hardening, VAPT remediation, and accessibility and GIGW compliance.</p>
+                        <p>He also leverages <strong class="text-dark-900">AI-assisted development workflows</strong> with tools such as Claude, Cursor, ChatGPT, Grok, and VS Code Copilot to accelerate development, improve code quality, and solve complex engineering challenges efficiently.</p>
+                    </div>
+                    <div class="mt-8 flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-primary-500/10 border border-primary-500/20 rounded-lg text-primary-600 text-sm font-medium">MERN Stack</span>
+                        <span class="px-4 py-2 bg-primary-500/10 border border-primary-500/20 rounded-lg text-primary-600 text-sm font-medium">Enterprise Apps</span>
+                        <span class="px-4 py-2 bg-primary-500/10 border border-primary-500/20 rounded-lg text-primary-600 text-sm font-medium">Secure APIs</span>
+                        <span class="px-4 py-2 bg-primary-500/10 border border-primary-500/20 rounded-lg text-primary-600 text-sm font-medium">Production Deployment</span>
+                    </div>
+                </div>
+                <div class="reveal-right delay-200">
+                    <div class="glass rounded-2xl p-8 relative overflow-hidden">
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-primary-500/5 rounded-full blur-3xl"></div>
+                        <div class="relative">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-2xl font-mono">SK</div>
+                                <div>
+                                    <h3 class="text-xl font-bold text-dark-900">Sagar</h3>
+                                    <p class="text-primary-600 text-sm">Full Stack Developer</p>
+                                </div>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between py-3 border-b border-dark-900/8"><span class="text-dark-500 text-sm">Experience</span><span class="text-dark-900 font-medium">01+ Years</span></div>
+                                <div class="flex items-center justify-between py-3 border-b border-dark-900/8"><span class="text-dark-500 text-sm">Specialization</span><span class="text-dark-900 font-medium">MERN Stack</span></div>
+                                <div class="flex items-center justify-between py-3 border-b border-dark-900/8"><span class="text-dark-500 text-sm">Focus</span><span class="text-dark-900 font-medium">Enterprise Applications</span></div>
+                                <div class="flex items-center justify-between py-3 border-b border-dark-900/8"><span class="text-dark-500 text-sm">Expertise</span><span class="text-dark-900 font-medium">Secure APIs</span></div>
+                                <div class="flex items-center justify-between py-3"><span class="text-dark-500 text-sm">Deployment</span><span class="text-dark-900 font-medium">Production Ready</span></div>
+                            </div>
+                            <div class="mt-6 pt-6 border-t border-dark-900/8">
+                                <div class="flex items-center gap-2 text-dark-500 text-sm"><i class="fas fa-map-marker-alt text-primary-600"></i>New Delhi, India</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24 md:py-32 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="section-label justify-center">02 &mdash; Experience</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900">Work Experience</h2>
+            </div>
+            <div class="relative">
+                <div class="timeline-line hidden md:block"></div>
+
+                <!-- AMC Repo Clearing Limited -->
+                <!-- <div class="reveal mb-8">
+                    <div class="exp-card">
+                        <div class="exp-header" onclick="toggleExp(this)">
+                            <div class="flex gap-4 md:gap-6 items-start">
+                                <div class="hidden md:block mt-1"><div class="timeline-dot current"></div></div>
+                                <div class="flex-1">
+                                    <div class="flex flex-wrap items-center gap-3 mb-2">
+                                        <h3 class="text-lg md:text-xl font-bold text-dark-900">AMC Repo Clearing Limited</h3>
+                                        <span class="px-3 py-1 bg-green-500/10 border border-green-500/20 rounded-full text-green-600 text-xs font-medium">Current</span>
+                                    </div>
+                                    <p class="text-primary-600 font-medium mb-1">Full Stack Developer</p>
+                                    <div class="flex flex-wrap items-center gap-4 text-dark-500 text-sm">
+                                        <span><i class="far fa-calendar-alt mr-1"></i> May 2026 &ndash; Present</span>
+                                        <span><i class="fas fa-map-marker-alt mr-1"></i> Mumbai, India (Remote)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exp-toggle"><i class="fas fa-chevron-down text-dark-600"></i></div>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-inner">
+                                <p class="text-dark-600 mb-4">Working as a Full Stack Developer on ARCL India, a semi-government platform built in tie-up with RBI and SEBI using the MERN Stack.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Built a company-wide Content Management System with role-based sign-in</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Implemented role-based access control and dashboards</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Created workflows for Managing Director, Department Heads, and employees</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Currently building an Asset Management System for asset inventory, allocation, and lifecycle tracking</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Collaborated on architecture, feature development, deployment, security, and compliance</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Worked on platforms aligned with semi-government and regulatory requirements</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+
+                <!-- Levithan Technologies -->
+                <div class="reveal mb-8">
+                    <div class="exp-card">
+                        <div class="exp-header" onclick="toggleExp(this)">
+                            <div class="flex gap-4 md:gap-6 items-start">
+                                <div class="hidden md:block mt-1"><div class="timeline-dot"></div></div>
+                                <div class="flex-1">
+                                    <h3 class="text-lg md:text-xl font-bold text-dark-900 mb-1">Levithan Technologies</h3>
+                                    <p class="text-primary-600 font-medium mb-1">Full Stack Developer</p>
+                                    <div class="flex flex-wrap items-center gap-4 text-dark-500 text-sm">
+                                        <span><i class="far fa-calendar-alt mr-1"></i> January 2026 &ndash; May 2026</span>
+                                        <span><i class="fas fa-map-marker-alt mr-1"></i> Faridabad, Haryana (Onsite)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exp-toggle"><i class="fas fa-chevron-down text-dark-600"></i></div>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-inner">
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Developed and maintained a government-facing MERN web platform</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Built scalable frontend and backend modules using React.js and Node.js</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Worked with MongoDB and MySQL data layers</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Managed deployment pipelines on private Linux servers</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Configured Nginx reverse proxy and production environments</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Configured secure VPN connectivity using FortiClient</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Worked on GIGW accessibility compliance</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Contributed to VAPT remediation and security hardening</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Worked on debugging, optimization, deployment, and server maintenance</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AtoZee Visas -->
+                <div class="reveal">
+                    <div class="exp-card">
+                        <div class="exp-header" onclick="toggleExp(this)">
+                            <div class="flex gap-4 md:gap-6 items-start">
+                                <div class="hidden md:block mt-1"><div class="timeline-dot"></div></div>
+                                <div class="flex-1">
+                                    <h3 class="text-lg md:text-xl font-bold text-dark-900 mb-1">AtoZee Visas</h3>
+                                    <p class="text-primary-600 font-medium mb-1">Full Stack Developer</p>
+                                    <div class="flex flex-wrap items-center gap-4 text-dark-500 text-sm">
+                                        <span><i class="far fa-calendar-alt mr-1"></i> January 2025 &ndash; November 2025</span>
+                                        <span><i class="fas fa-map-marker-alt mr-1"></i> New Delhi, India</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exp-toggle"><i class="fas fa-chevron-down text-dark-600"></i></div>
+                        </div>
+                        <div class="exp-content">
+                            <div class="exp-inner">
+                                <p class="text-dark-600 mb-4">Major project-heavy experience &mdash; designed and delivered a full-scale multi-role CRM platform from the ground up.</p>
+                                <ul class="space-y-3">
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Created dashboards for Admin, Executives, CA Professionals, and Clients</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Reduced manual operations by over 40%</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Built the architecture using React.js, Tailwind CSS, Node.js, Express.js, and MySQL</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Implemented JWT authentication with refresh token rotation</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Implemented multi-tenant company isolation</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Integrated WebRTC and Socket.IO for real-time monitoring</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Built Lead Management, automated meeting scheduling and reminders</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Built Billing and Invoicing, HR and Payroll automation</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Implemented real-time notifications, analytics dashboards and data export functionality</span></li>
+                                    <li class="flex items-start gap-3 text-dark-600"><i class="fas fa-check-circle text-primary-600 mt-1 flex-shrink-0 text-sm"></i><span>Improved application performance by 30%+ through debugging and optimization</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="section-label justify-center">03 &mdash; Projects</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 mb-4">Featured Projects</h2>
+                <p class="text-dark-500 max-w-2xl mx-auto">Production-grade applications built for enterprise and real-world use cases.</p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Project 1: Enterprise CMS -->
+                <div class="reveal project-card">
+                    <div class="project-image">
+                        <div class="text-center z-10">
+                            <i class="fas fa-building text-5xl text-primary-600/30 mb-3"></i>
+                            <p class="text-dark-500 font-mono text-sm">Enterprise CMS</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 bg-yellow-500/10 border border-yellow-500/20 rounded text-yellow-600 text-xs font-medium">Confidential / Enterprise</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-900 mb-2">Enterprise Content Management System</h3>
+                        <p class="text-primary-600 text-sm mb-3">Full Stack Developer</p>
+                        <p class="text-dark-600 text-sm mb-4">A company-wide Content Management System designed to manage enterprise content and departmental workflows with secure role-based access.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">React.js</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Node.js</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Express.js</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">PostgreSQL/MySQL</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">RBAC</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">JWT</span>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Role-based authentication & department-based access</li>
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Admin dashboards & approval workflows</li>
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Document management & audit-oriented workflows</li>
+                        </ul>
+                        <div class="pt-4 border-t border-dark-900/8">
+                            <span class="text-dark-500 text-xs font-mono">Private / Enterprise Project</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Asset Management System -->
+                <div class="reveal project-card delay-100">
+                    <div class="project-image">
+                        <div class="text-center z-10">
+                            <i class="fas fa-boxes text-5xl text-primary-600/30 mb-3"></i>
+                            <p class="text-dark-500 font-mono text-sm">Asset Management</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 bg-blue-500/10 border border-blue-500/20 rounded text-blue-600 text-xs font-medium">In Progress</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-900 mb-2">Asset Management System</h3>
+                        <p class="text-primary-600 text-sm mb-3">Full Stack Developer</p>
+                        <p class="text-dark-600 text-sm mb-4">An internal Asset Management System designed to track company assets throughout their lifecycle.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">React.js</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Node.js</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Express.js</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Database</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">REST APIs</span>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Asset inventory & lifecycle tracking</li>
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Asset allocation & department-wise management</li>
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Search, filtering, dashboard and reporting</li>
+                        </ul>
+                        <div class="pt-4 border-t border-dark-900/8">
+                            <span class="text-dark-500 text-xs font-mono">Currently Building</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Multi-Role CRM -->
+                <div class="reveal project-card">
+                    <div class="project-image">
+                        <div class="text-center z-10">
+                            <i class="fas fa-users-cog text-5xl text-primary-600/30 mb-3"></i>
+                            <p class="text-dark-500 font-mono text-sm">CRM Platform</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 bg-primary-500/10 border border-primary-500/20 rounded text-primary-600 text-xs font-medium">CRM / Enterprise SaaS</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-900 mb-2">Multi-Role CRM Platform</h3>
+                        <p class="text-primary-600 text-sm mb-3">Full Stack Developer</p>
+                        <p class="text-dark-600 text-sm mb-4">A full-scale multi-role CRM platform developed from the ground up for an immigration business.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">React.js</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Tailwind CSS</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Node.js</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">MySQL</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Socket.IO</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">WebRTC</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Recharts</span>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Lead Management & multi-role dashboards</li>
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Automated meeting scheduling & billing/invoicing</li>
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>HR & payroll automation with real-time notifications</li>
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Analytics dashboards & Excel/CSV/PDF exports</li>
+                        </ul>
+                        <div class="pt-4 border-t border-dark-900/8">
+                            <span class="text-dark-500 text-xs font-mono">Multi-tenant Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Bank Management System -->
+                <div class="reveal project-card delay-100">
+                    <div class="project-image">
+                        <div class="text-center z-10">
+                            <i class="fas fa-university text-5xl text-primary-600/30 mb-3"></i>
+                            <p class="text-dark-500 font-mono text-sm">Banking System</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="px-2 py-1 bg-purple-500/10 border border-purple-500/20 rounded text-purple-600 text-xs font-medium">Desktop Application</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-dark-900 mb-2">Bank Management System</h3>
+                        <p class="text-primary-600 text-sm mb-3">Developer</p>
+                        <p class="text-dark-600 text-sm mb-4">A banking application designed to manage core banking operations including account lifecycle management and secure fund transfers.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Java</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Swing</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">AWT</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">MySQL</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">Git</span>
+                            <span class="px-2 py-1 bg-dark-100 rounded text-dark-600 text-xs">GitHub</span>
+                        </div>
+                        <ul class="space-y-2 mb-4">
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Account management & deposit/withdrawal</li>
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Fund transfer & transaction management</li>
+                            <li class="flex items-start gap-2 text-dark-500 text-sm"><i class="fas fa-check text-primary-600 mt-0.5 text-xs"></i>Audit trail & data integrity</li>
+                        </ul>
+                        <div class="pt-4 border-t border-dark-900/8">
+                            <span class="text-dark-500 text-xs font-mono">Core Banking Operations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section id="skills" class="py-24 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="section-label justify-center">04 &mdash; Technologies</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 mb-4">Tech Stack</h2>
+                <p class="text-dark-500 max-w-2xl mx-auto">Technologies and tools I work with daily.</p>
+            </div>
+
+            <div class="space-y-10">
+                <!-- Languages & Frameworks -->
+                <div class="reveal">
+                    <h3 class="text-lg font-semibold text-dark-900 mb-4 flex items-center gap-2"><i class="fas fa-code text-primary-600"></i>Languages & Frameworks</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="tech-item"><span class="text-dark-600 text-sm">JavaScript</span><div class="tech-tooltip">Primary language for full-stack development</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Java</span><div class="tech-tooltip">Desktop applications & backend</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Node.js</span><div class="tech-tooltip">Server-side JavaScript runtime</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">React.js</span><div class="tech-tooltip">Frontend UI library</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Express.js</span><div class="tech-tooltip">Web application framework</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">HTML5</span><div class="tech-tooltip">Markup language</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">CSS3</span><div class="tech-tooltip">Styling & layouts</div></div>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="reveal delay-100">
+                    <h3 class="text-lg font-semibold text-dark-900 mb-4 flex items-center gap-2"><i class="fas fa-laptop-code text-primary-600"></i>Frontend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="tech-item"><span class="text-dark-600 text-sm">React.js</span><div class="tech-tooltip">Component-based UI</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Tailwind CSS</span><div class="tech-tooltip">Utility-first CSS framework</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Bootstrap</span><div class="tech-tooltip">CSS framework</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Redux</span><div class="tech-tooltip">State management</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Context API</span><div class="tech-tooltip">React state management</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Recharts</span><div class="tech-tooltip">Charting library</div></div>
+                    </div>
+                </div>
+
+                <!-- Backend & APIs -->
+                <div class="reveal delay-200">
+                    <h3 class="text-lg font-semibold text-dark-900 mb-4 flex items-center gap-2"><i class="fas fa-server text-primary-600"></i>Backend & APIs</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Node.js</span><div class="tech-tooltip">Runtime environment</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Express.js</span><div class="tech-tooltip">Web framework</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">REST APIs</span><div class="tech-tooltip">API architecture</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Socket.IO</span><div class="tech-tooltip">Real-time communication</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">WebRTC</span><div class="tech-tooltip">Real-time media</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">JWT Authentication</span><div class="tech-tooltip">Secure token-based auth</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Secure API Development</span><div class="tech-tooltip">Hardened API practices</div></div>
+                    </div>
+                </div>
+
+                <!-- Databases -->
+                <div class="reveal">
+                    <h3 class="text-lg font-semibold text-dark-900 mb-4 flex items-center gap-2"><i class="fas fa-database text-primary-600"></i>Databases</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="tech-item"><span class="text-dark-600 text-sm">MongoDB</span><div class="tech-tooltip">NoSQL document database</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">MySQL</span><div class="tech-tooltip">Relational database</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">PostgreSQL</span><div class="tech-tooltip">Advanced relational DB</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">SQL</span><div class="tech-tooltip">Query language</div></div>
+                    </div>
+                </div>
+
+                <!-- Cloud & DevOps -->
+                <div class="reveal delay-100">
+                    <h3 class="text-lg font-semibold text-dark-900 mb-4 flex items-center gap-2"><i class="fas fa-cloud text-primary-600"></i>Cloud & DevOps</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="tech-item"><span class="text-dark-600 text-sm">AWS</span><div class="tech-tooltip">Cloud platform</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">S3</span><div class="tech-tooltip">Object storage</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">EC2</span><div class="tech-tooltip">Compute instances</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Linux</span><div class="tech-tooltip">Server OS</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Nginx</span><div class="tech-tooltip">Web server / reverse proxy</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">CI/CD</span><div class="tech-tooltip">Continuous integration</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Git</span><div class="tech-tooltip">Version control</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">GitHub</span><div class="tech-tooltip">Code hosting</div></div>
+                    </div>
+                </div>
+
+                <!-- Security & Compliance -->
+                <div class="reveal delay-200">
+                    <h3 class="text-lg font-semibold text-dark-900 mb-4 flex items-center gap-2"><i class="fas fa-shield-alt text-primary-600"></i>Security & Compliance</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="tech-item"><span class="text-dark-600 text-sm">VAPT Remediation</span><div class="tech-tooltip">Vulnerability remediation</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">GIGW Compliance</span><div class="tech-tooltip">Government guidelines</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Accessibility Compliance</span><div class="tech-tooltip">WCAG standards</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Secure Web Dev</span><div class="tech-tooltip">Secure coding practices</div></div>
+                    </div>
+                </div>
+
+                <!-- Payments -->
+                <div class="reveal">
+                    <h3 class="text-lg font-semibold text-dark-900 mb-4 flex items-center gap-2"><i class="fas fa-credit-card text-primary-600"></i>Payments</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Razorpay</span><div class="tech-tooltip">Payment gateway</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Stripe</span><div class="tech-tooltip">Payment processing</div></div>
+                    </div>
+                </div>
+
+                <!-- AI-Assisted Development -->
+                <div class="reveal delay-100">
+                    <h3 class="text-lg font-semibold text-dark-900 mb-4 flex items-center gap-2"><i class="fas fa-robot text-primary-600"></i>AI-Assisted Development</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Claude</span><div class="tech-tooltip">AI assistant by Anthropic</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Cursor</span><div class="tech-tooltip">AI-powered code editor</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">ChatGPT</span><div class="tech-tooltip">OpenAI assistant</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Grok</span><div class="tech-tooltip">xAI assistant</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">VS Code Copilot</span><div class="tech-tooltip">GitHub AI pair programmer</div></div>
+                    </div>
+                </div>
+
+                <!-- Developer Tools -->
+                <div class="reveal delay-200">
+                    <h3 class="text-lg font-semibold text-dark-900 mb-4 flex items-center gap-2"><i class="fas fa-tools text-primary-600"></i>Developer Tools</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <div class="tech-item"><span class="text-dark-600 text-sm">VS Code</span><div class="tech-tooltip">Code editor</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Postman</span><div class="tech-tooltip">API testing</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">Eclipse</span><div class="tech-tooltip">Java IDE</div></div>
+                        <div class="tech-item"><span class="text-dark-600 text-sm">FortiClient VPN</span><div class="tech-tooltip">Secure VPN</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Engineering Capabilities -->
+    <section class="py-24 md:py-32 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="section-label justify-center">05 &mdash; Engineering</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 mb-4">What I Build</h2>
+                <p class="text-dark-500 max-w-2xl mx-auto">End-to-end engineering capabilities across the full stack.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="reveal cap-card">
+                    <div class="cap-number">01</div>
+                    <h3 class="text-xl font-bold text-dark-900 mb-3">Full Stack Applications</h3>
+                    <p class="text-dark-600 text-sm leading-relaxed">Scalable frontend and backend applications using modern JavaScript technologies.</p>
+                </div>
+                <div class="reveal cap-card delay-100">
+                    <div class="cap-number">02</div>
+                    <h3 class="text-xl font-bold text-dark-900 mb-3">Enterprise Systems</h3>
+                    <p class="text-dark-600 text-sm leading-relaxed">Role-based enterprise applications, dashboards, workflows, and internal platforms.</p>
+                </div>
+                <div class="reveal cap-card delay-200">
+                    <div class="cap-number">03</div>
+                    <h3 class="text-xl font-bold text-dark-900 mb-3">Secure APIs</h3>
+                    <p class="text-dark-600 text-sm leading-relaxed">REST APIs, authentication, authorization, JWT, secure backend architecture.</p>
+                </div>
+                <div class="reveal cap-card">
+                    <div class="cap-number">04</div>
+                    <h3 class="text-xl font-bold text-dark-900 mb-3">Real-Time Applications</h3>
+                    <p class="text-dark-600 text-sm leading-relaxed">Socket.IO and WebRTC-based real-time functionality for live data and communication.</p>
+                </div>
+                <div class="reveal cap-card delay-100">
+                    <div class="cap-number">05</div>
+                    <h3 class="text-xl font-bold text-dark-900 mb-3">Production Deployment</h3>
+                    <p class="text-dark-600 text-sm leading-relaxed">Linux servers, Nginx, deployment pipelines, environment configuration.</p>
+                </div>
+                <div class="reveal cap-card delay-200">
+                    <div class="cap-number">06</div>
+                    <h3 class="text-xl font-bold text-dark-900 mb-3">Security & Compliance</h3>
+                    <p class="text-dark-600 text-sm leading-relaxed">VAPT remediation, accessibility improvements, GIGW compliance, secure practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section class="py-24 md:py-32 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="section-label justify-center">Security</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 mb-4">Security Is Part of Development</h2>
+                <p class="text-dark-500 max-w-2xl mx-auto">Security is not an afterthought &mdash; it's integrated into every layer of the application.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="reveal sec-item">
+                    <div class="sec-icon"><i class="fas fa-key"></i></div>
+                    <div><h4 class="text-dark-900 font-medium text-sm">JWT Authentication</h4><p class="text-dark-500 text-xs">Token-based secure auth</p></div>
+                </div>
+                <div class="reveal sec-item delay-100">
+                    <div class="sec-icon"><i class="fas fa-user-shield"></i></div>
+                    <div><h4 class="text-dark-900 font-medium text-sm">Role-Based Access Control</h4><p class="text-dark-500 text-xs">Granular permissions</p></div>
+                </div>
+                <div class="reveal sec-item delay-200">
+                    <div class="sec-icon"><i class="fas fa-lock"></i></div>
+                    <div><h4 class="text-dark-900 font-medium text-sm">Secure API Development</h4><p class="text-dark-500 text-xs">Hardened endpoints</p></div>
+                </div>
+                <div class="reveal sec-item">
+                    <div class="sec-icon"><i class="fas fa-fingerprint"></i></div>
+                    <div><h4 class="text-dark-900 font-medium text-sm">Password Security</h4><p class="text-dark-500 text-xs">Hashing & encryption</p></div>
+                </div>
+                <div class="reveal sec-item delay-100">
+                    <div class="sec-icon"><i class="fas fa-bug"></i></div>
+                    <div><h4 class="text-dark-900 font-medium text-sm">VAPT Remediation</h4><p class="text-dark-500 text-xs">Vulnerability fixes</p></div>
+                </div>
+                <div class="reveal sec-item delay-200">
+                    <div class="sec-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div><h4 class="text-dark-900 font-medium text-sm">Security Hardening</h4><p class="text-dark-500 text-xs">Server & app hardening</p></div>
+                </div>
+                <div class="reveal sec-item">
+                    <div class="sec-icon"><i class="fas fa-network-wired"></i></div>
+                    <div><h4 class="text-dark-900 font-medium text-sm">HTTPS / Nginx</h4><p class="text-dark-500 text-xs">Secure transport & proxy</p></div>
+                </div>
+                <div class="reveal sec-item delay-100">
+                    <div class="sec-icon"><i class="fas fa-universal-access"></i></div>
+                    <div><h4 class="text-dark-900 font-medium text-sm">Accessibility Compliance</h4><p class="text-dark-500 text-xs">WCAG standards</p></div>
+                </div>
+                <div class="reveal sec-item delay-200">
+                    <div class="sec-icon"><i class="fas fa-clipboard-check"></i></div>
+                    <div><h4 class="text-dark-900 font-medium text-sm">GIGW Compliance</h4><p class="text-dark-500 text-xs">Government guidelines</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI-Assisted Development -->
+    <section class="py-24 md:py-32 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="section-label justify-center">AI Integration</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 mb-4">Engineering With AI</h2>
+                <p class="text-dark-500 max-w-2xl mx-auto">Leveraging AI-assisted tools to accelerate development without compromising engineering rigor.</p>
+            </div>
+            <div class="reveal glass rounded-2xl p-8 md:p-12">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-dark-600 mb-6 leading-relaxed">I use AI-assisted development tools to accelerate workflows and improve code quality. AI enhances my engineering capabilities &mdash; it doesn't replace them.</p>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3"><i class="fas fa-bolt text-primary-600 mt-1"></i><div><h4 class="text-dark-900 font-medium text-sm">Feature Development</h4><p class="text-dark-500 text-xs">Rapid prototyping and implementation</p></div></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-bug text-primary-600 mt-1"></i><div><h4 class="text-dark-900 font-medium text-sm">Debugging</h4><p class="text-dark-500 text-xs">Faster issue identification and resolution</p></div></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-code text-primary-600 mt-1"></i><div><h4 class="text-dark-900 font-medium text-sm">Refactoring</h4><p class="text-dark-500 text-xs">Code optimization and modernization</p></div></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-book text-primary-600 mt-1"></i><div><h4 class="text-dark-900 font-medium text-sm">Documentation</h4><p class="text-dark-500 text-xs">Clear, comprehensive code documentation</p></div></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-brain text-primary-600 mt-1"></i><div><h4 class="text-dark-900 font-medium text-sm">Problem Solving</h4><p class="text-dark-500 text-xs">Complex algorithm and architecture design</p></div></div>
+                            <div class="flex items-start gap-3"><i class="fas fa-rocket text-primary-600 mt-1"></i><div><h4 class="text-dark-900 font-medium text-sm">Development Workflows</h4><p class="text-dark-500 text-xs">Streamlined CI/CD and deployment</p></div></div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="card text-center"><i class="fas fa-robot text-3xl text-primary-600 mb-3"></i><h4 class="text-dark-900 font-medium text-sm">Claude</h4><p class="text-dark-500 text-xs mt-1">Anthropic AI</p></div>
+                        <div class="card text-center"><i class="fas fa-mouse-pointer text-3xl text-primary-600 mb-3"></i><h4 class="text-dark-900 font-medium text-sm">Cursor</h4><p class="text-dark-500 text-xs mt-1">AI Code Editor</p></div>
+                        <div class="card text-center"><i class="fas fa-comments text-3xl text-primary-600 mb-3"></i><h4 class="text-dark-900 font-medium text-sm">ChatGPT</h4><p class="text-dark-500 text-xs mt-1">OpenAI</p></div>
+                        <div class="card text-center"><i class="fas fa-bolt text-3xl text-primary-600 mb-3"></i><h4 class="text-dark-900 font-medium text-sm">Grok</h4><p class="text-dark-500 text-xs mt-1">xAI</p></div>
+                        <div class="card text-center col-span-2"><i class="fas fa-code-branch text-3xl text-primary-600 mb-3"></i><h4 class="text-dark-900 font-medium text-sm">VS Code Copilot</h4><p class="text-dark-500 text-xs mt-1">GitHub AI Pair Programmer</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="py-24 md:py-32 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="section-label justify-center">Education</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900">Education</h2>
+            </div>
+            <div class="reveal">
+                <div class="glass rounded-2xl p-8 md:p-10">
+                    <div class="flex flex-col md:flex-row md:items-center gap-6">
+                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500/20 to-primary-700/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-graduation-cap text-2xl text-primary-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-dark-900 mb-1">Bachelor of Science in Computer Science</h3>
+                            <p class="text-primary-600 font-medium mb-2">Deshbandhu College, Delhi University</p>
+                            <div class="flex flex-wrap items-center gap-4 text-dark-500 text-sm">
+                                <span><i class="far fa-calendar-alt mr-1"></i> August 2021 &ndash; July 2024</span>
+                                <span><i class="fas fa-map-marker-alt mr-1"></i> New Delhi, India</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certification Section -->
+    <section class="py-24 md:py-32 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="section-label justify-center">Certification</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900">Certification</h2>
+            </div>
+            <div class="reveal">
+                <div class="glass rounded-2xl p-8 md:p-10">
+                    <div class="flex flex-col md:flex-row md:items-center gap-6">
+                        <div class="w-16 h-16 rounded-xl bg-gradient-to-br from-primary-500/20 to-primary-700/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-certificate text-2xl text-primary-600"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-dark-900 mb-1">Data Structures and Algorithms Using Java</h3>
+                            <p class="text-primary-600 font-medium mb-2">NPTEL &mdash; Indian Institute of Technology Kharagpur</p>
+                            <div class="flex flex-wrap items-center gap-4 text-dark-500 text-sm">
+                                <span><i class="far fa-calendar-alt mr-1"></i> November 2023</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume CTA Section -->
+    <section id="resume" class="py-24 md:py-32 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <div class="glass rounded-2xl p-12 md:p-16 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-primary-500/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-64 h-64 bg-primary-500/5 rounded-full blur-3xl"></div>
+                <div class="relative">
+                    <div class="w-16 h-16 rounded-2xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-file-alt text-2xl text-primary-600"></i>
+                    </div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark-900 mb-4">Want to know more about my experience?</h2>
+                    <p class="text-dark-600 mb-8 max-w-xl mx-auto">Download my resume or connect with me on LinkedIn to explore my full professional background.</p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                        <a href="https://drive.google.com/file/d/1dJ4MNoAssXfYVPNjuZYCro_XEiiLEITl/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="btn-primary">
+                            <i class="fas fa-download"></i>
+                            Download Resume
+                        </a>
+                        <a href="https://www.linkedin.com/in/sagar1359/" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                            <i class="fab fa-linkedin"></i>
+                            View LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 md:py-32 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <div class="section-label justify-center">06 &mdash; Contact</div>
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-dark-900 mb-4">Let's Build Something.</h2>
+                <p class="text-dark-500 max-w-2xl mx-auto">Have a project, opportunity, or technical challenge in mind? Let's connect.</p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12">
+                <div class="reveal">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-envelope text-primary-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-dark-900 font-medium mb-1">Email</h4>
+                                <a href="mailto:sagar90160@gmail.com" class="text-dark-600 hover:text-primary-600 transition-colors link-underline">sagar90160@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fab fa-linkedin text-primary-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-dark-900 font-medium mb-1">LinkedIn</h4>
+                                <a href="https://www.linkedin.com/in/sagar1359/" target="_blank" rel="noopener noreferrer" class="text-dark-600 hover:text-primary-600 transition-colors link-underline">linkedin.com/in/sagar1359</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-primary-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-dark-900 font-medium mb-1">Location</h4>
+                                <p class="text-dark-600">New Delhi, India</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-right delay-200">
+                    <form id="contact-form" class="glass rounded-2xl p-8" novalidate>
+                        <div class="space-y-5">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-dark-600 mb-2">Name</label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required aria-required="true">
+                                <p class="error-msg text-red-600 text-xs mt-1 hidden">Please enter your name.</p>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-dark-600 mb-2">Email</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required aria-required="true">
+                                <p class="error-msg text-red-600 text-xs mt-1 hidden">Please enter a valid email.</p>
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-medium text-dark-600 mb-2">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-input" placeholder="What's this about?" required aria-required="true">
+                                <p class="error-msg text-red-600 text-xs mt-1 hidden">Please enter a subject.</p>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-dark-600 mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" class="form-input resize-none" placeholder="Tell me about your project..." required aria-required="true"></textarea>
+                                <p class="error-msg text-red-600 text-xs mt-1 hidden">Please enter a message.</p>
+                            </div>
+                            <button type="submit" class="btn-primary w-full justify-center">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </div>
+                        <p class="text-dark-500 text-xs mt-4 text-center">Your message is sent directly and privately &mdash; I'll get back to you soon.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-dark-900/8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-primary-500 to-primary-700 flex items-center justify-center text-white font-bold text-sm font-mono">SK</div>
+                        <span class="text-dark-900 font-semibold">Sagar</span>
+                    </div>
+                    <p class="text-dark-500 text-sm">Full Stack Developer | MERN Stack</p>
+                    <p class="text-dark-500 text-xs mt-2">New Delhi, India</p>
+                </div>
+                <div>
+                    <h4 class="text-dark-900 font-medium mb-4">Navigation</h4>
+                    <div class="flex flex-col gap-2">
+                        <a href="#about" class="text-dark-500 hover:text-primary-600 text-sm transition-colors">About</a>
+                        <a href="#experience" class="text-dark-500 hover:text-primary-600 text-sm transition-colors">Experience</a>
+                        <a href="#projects" class="text-dark-500 hover:text-primary-600 text-sm transition-colors">Projects</a>
+                        <a href="#skills" class="text-dark-500 hover:text-primary-600 text-sm transition-colors">Skills</a>
+                        <a href="#contact" class="text-dark-500 hover:text-primary-600 text-sm transition-colors">Contact</a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-dark-900 font-medium mb-4">Connect</h4>
+                    <div class="flex gap-3">
+                        <a href="https://www.linkedin.com/in/sagar1359/" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-dark-900/5 border border-dark-900/15 flex items-center justify-center text-dark-600 hover:text-primary-600 hover:border-primary-400/30 transition-all" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Sagar2408" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-lg bg-dark-900/5 border border-dark-900/15 flex items-center justify-center text-dark-600 hover:text-primary-600 hover:border-primary-400/30 transition-all" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="mailto:sagar90160@gmail.com" class="w-10 h-10 rounded-lg bg-dark-900/5 border border-dark-900/15 flex items-center justify-center text-dark-600 hover:text-primary-600 hover:border-primary-400/30 transition-all" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-dark-900/8 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-dark-500 text-sm">&copy; 2026 Sagar. All rights reserved.</p>
+                <p class="text-dark-400 text-xs">Built with modern web technologies.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    // Mobile Menu
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    function openMobileMenu() {
+        mobileMenu.classList.add('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('open');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+
+    mobileMenuBtn.addEventListener('click', openMobileMenu);
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+    mobileMenuOverlay.addEventListener('click', closeMobileMenu);
+    mobileLinks.forEach(link => link.addEventListener('click', closeMobileMenu));
+
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        if (currentScroll > 50) {
+            navbar.classList.add('nav-blur');
+        } else {
+            navbar.classList.remove('nav-blur');
+        }
+        lastScroll = currentScroll;
+    });
+
+    // Scroll Reveal
+    const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    // Experience Card Toggle
+    function toggleExp(header) {
+        const card = header.closest('.exp-card');
+        const content = card.querySelector('.exp-content');
+        const toggle = header.querySelector('.exp-toggle');
+
+        const isOpen = content.classList.contains('open');
+
+        // Close all other cards
+        document.querySelectorAll('.exp-content.open').forEach(c => {
+            if (c !== content) {
+                c.classList.remove('open');
+                c.closest('.exp-card').querySelector('.exp-toggle').classList.remove('open');
+            }
+        });
+
+        content.classList.toggle('open');
+        toggle.classList.toggle('open');
+    }
+
+    // Contact Form Validation
+    const contactForm = document.getElementById('contact-form');
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const submitBtnDefaultHTML = submitBtn.innerHTML;
+
+    // Google Form this contact form submits into (Portfolio Queries)
+    const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSfBD6k9y45yRZrtSaDQEexVwVobFkTTLshXuFlhNc3UOWxg4A/formResponse';
+    const GOOGLE_FORM_ENTRIES = {
+        name: 'entry.1237990036',
+        email: 'entry.2034189026',
+        subject: 'entry.843542791',
+        message: 'entry.1798140763'
+    };
+
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const subject = document.getElementById('subject');
+        const message = document.getElementById('message');
+
+        // Name validation
+        if (!name.value.trim()) {
+            showError(name, true);
+            isValid = false;
+        } else {
+            showError(name, false);
+        }
+
+        // Email validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!email.value.trim() || !emailRegex.test(email.value)) {
+            showError(email, true);
+            isValid = false;
+        } else {
+            showError(email, false);
+        }
+
+        // Subject validation
+        if (!subject.value.trim()) {
+            showError(subject, true);
+            isValid = false;
+        } else {
+            showError(subject, false);
+        }
+
+        // Message validation
+        if (!message.value.trim()) {
+            showError(message, true);
+            isValid = false;
+        } else {
+            showError(message, false);
+        }
+
+        if (!isValid) return;
+
+        const formData = new FormData();
+        formData.append(GOOGLE_FORM_ENTRIES.name, name.value.trim());
+        formData.append(GOOGLE_FORM_ENTRIES.email, email.value.trim());
+        formData.append(GOOGLE_FORM_ENTRIES.subject, subject.value.trim());
+        formData.append(GOOGLE_FORM_ENTRIES.message, message.value.trim());
+
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+        fetch(GOOGLE_FORM_ACTION, {
+            method: 'POST',
+            mode: 'no-cors',
+            body: formData
+        }).then(() => {
+            submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent';
+            contactForm.reset();
+            setTimeout(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = submitBtnDefaultHTML;
+            }, 3000);
+        }).catch(() => {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = submitBtnDefaultHTML;
+            alert('Something went wrong sending your message. Please try again or email me directly.');
+        });
+    });
+
+    function showError(input, show) {
+        const errorMsg = input.parentElement.querySelector('.error-msg');
+        if (show) {
+            errorMsg.classList.remove('hidden');
+            input.style.borderColor = '#ef4444';
+        } else {
+            errorMsg.classList.add('hidden');
+            input.style.borderColor = '';
+        }
+    }
+
+    // Real-time validation
+    ['name', 'email', 'subject', 'message'].forEach(id => {
+        const input = document.getElementById(id);
+        input.addEventListener('blur', function() {
+            if (this.value.trim()) {
+                showError(this, false);
+            }
+        });
+    });
+
+    // Hero Canvas Animation
+    const canvas = document.getElementById('hero-canvas');
+    const ctx = canvas.getContext('2d');
+    let animationId;
+    let particles = [];
+
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 2 + 0.5;
+            this.speedX = (Math.random() - 0.5) * 0.3;
+            this.speedY = (Math.random() - 0.5) * 0.3;
+            this.opacity = Math.random() * 0.5 + 0.1;
+        }
+
+        update() {
+            this.x += this.speedX;
+            this.y += this.speedY;
+
+            if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(14, 165, 233, ${this.opacity})`;
+            ctx.fill();
+        }
+    }
+
+    function initParticles() {
+        particles = [];
+        const particleCount = Math.min(50, Math.floor((canvas.width * canvas.height) / 25000));
+        for (let i = 0; i < particleCount; i++) {
+            particles.push(new Particle());
+        }
+    }
+
+    function drawConnections() {
+        for (let i = 0; i < particles.length; i++) {
+            for (let j = i + 1; j < particles.length; j++) {
+                const dx = particles[i].x - particles[j].x;
+                const dy = particles[i].y - particles[j].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 150) {
+                    ctx.beginPath();
+                    ctx.strokeStyle = `rgba(14, 165, 233, ${0.1 * (1 - distance / 150)})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.moveTo(particles[i].x, particles[i].y);
+                    ctx.lineTo(particles[j].x, particles[j].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        particles.forEach(particle => {
+            particle.update();
+            particle.draw();
+        });
+
+        drawConnections();
+        animationId = requestAnimationFrame(animate);
+    }
+
+    initParticles();
+    animate();
+
+    // Pause animation when not visible
+    const heroSection = document.getElementById('home');
+    const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                if (!animationId) animate();
+            } else {
+                cancelAnimationFrame(animationId);
+                animationId = null;
+            }
+        });
+    });
+    heroObserver.observe(heroSection);
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Active nav link highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            if (window.pageYOffset >= sectionTop) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navLinks.forEach(link => {
+            link.classList.remove('text-primary-600');
+            if (link.getAttribute('href') === '#' + current) {
+                link.classList.add('text-primary-600');
+            }
+        });
+    });
+
+    // Keyboard navigation for experience cards
+    document.querySelectorAll('.exp-header').forEach(header => {
+        header.setAttribute('tabindex', '0');
+        header.setAttribute('role', 'button');
+        header.setAttribute('aria-expanded', 'false');
+
+        header.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleExp(header);
+            }
+        });
+
+        header.addEventListener('click', () => {
+            const isOpen = header.nextElementSibling.classList.contains('open');
+            header.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+        });
+    });
+
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', () => {
+        cancelAnimationFrame(animationId);
+        revealObserver.disconnect();
+        heroObserver.disconnect();
+    });
+    </script>
+</body>
+</html>
